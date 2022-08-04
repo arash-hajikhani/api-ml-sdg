@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ML API DOC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+<div class="container mt-5">
+  <div class="row">
+   
+  <h1>API DOCUMENTATION</h1>
+  <p><strong><span class="badge bg-success">V1.0</span> BASE URL  <a href="https://api-ml-sdg.azurewebsites.net/">https://api-ml-sdg.azurewebsites.net</a></strong> </p>
+  <br>
+  <p class="text-muted">This ML API contains one endpoint that is
+  <div class="col-md-2">
+    <ul>
+      <li><a href="#"><strong>/api/getpredictions</strong></a></li>
+      </ul>
+  </div>
+  </p>
+  
+<div class="mt-5"></div>
+<div class="col-md-6">
+  <div class="card shadow">
+    <div class="card-body">
+    <h3>Curl</h3>
+    <hr>
+    <p>curl --location --request POST 'https://api-ml-sdg.azurewebsites.net/api/getpredictions' \</p>
+    <p>--header 'Authorization: Token <a class="use" href="">unique_token</a>' \</p>
+    <p>--header 'Content-Type: application/json' \</p>
+    <p>--data-raw '{"text":"TitleAbstract_text",</p>
+    <p>"unique_id":"EID"}'</p>
+    <hr>
+    <p class="text-muted">NOTE : In this example we using the unique Id as EID</p>
+    </div>
+   
+</div>
+  </div>
+  <div class="col-md-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3>Python - Requests</h3>
+        <hr>
+        <p>import requests</p>
+        <p>import json</p>
+    
+        <p>url = "https://api-ml-sdg.azurewebsites.net/api/getpredictions"</p>
+    
+        <p>payload = json.dumps({</p>
+        <p>"text": "TitleAbstract_text",</p>
+        <p>"unique_id": "EID"</p>
+        <p>})</p>
+        <p>headers = {</p>
+        <p># add unique token below</p>    
+        <p>'Authorization': 'Token <a class="use" href="">unique_token</a>',</p>
+        <p>'Content-Type': 'application/json'</p>
+        <p>}</p>
+    
+        <p>response = requests.request("POST", url, headers=headers, data=payload)</p>
+    
+        <p>print(response.text)</p>
+        <hr>
+        <p class="text-muted">NOTE : In this example we using the unique Id as EID</p>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="mb-5"></div>
+<script>
+$('.use').hover(
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.data('defaultText', $this.text());
+        $this.text("Token copied!!");
+        navigator.clipboard.writeText("1/1201085579334815:f^=8*92s49es7n@taynn^zrbh63brmvf3p(%q8#b)p&s4ycpc$");
+    },
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.text($this.data('defaultText'));
+    }
+);
+    </script>
+</body>
+</html>
+
